@@ -1,0 +1,62 @@
+.logout-btn{
+    position: absolute;
+  right: 9px;
+  top: 7px;
+  }
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 88vh;
+        flex-direction: column;
+    }
+    body{
+      min-height: 100vh;
+      background-color: #69dbd2
+;
+    }
+    footer{
+      margin-top: 50px;
+      display: flex;
+      position: relative;
+      bottom: -1px;
+      justify-content: center;
+      height: 70px;
+      background: rgb(18 105 101);
+      color: white;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .developer{
+      display: block;
+      margin: auto;
+      align-items: center;
+      text-align: center;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+    }
+    .main .balance{
+        align-items: center;
+        background-color: greenyellow;
+        text-align: center;
+        border: 2px solid gray;
+        /* min-width: 600px; */
+        width: auto;
+        height: 200px;
+        padding: 50px;
+        margin: 50px;
+    }
+    .far{
+      cursor: pointer;
+    }
+    @media screen and (max-width:500px){
+      .main .balance{
+        margin: 0;
+      }
+    }

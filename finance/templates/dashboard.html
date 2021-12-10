@@ -1,0 +1,54 @@
+{% extends 'home.html' %}
+
+
+{% block body %}
+
+<div class="container box">
+        <div class="main">
+            <div class="balance">
+                <h1> Total spend = R.S {{total}}</h1>
+            </div>
+        </div>
+      <div class="input-area">
+          <form action="{% url 'add_finance' %}" method="post"> {% csrf_token %}
+        <div class="input-group mb-3 my-2">
+            <input type="text" class="form-control" placeholder="Purpose" name="purpose" aria-label="Purpose" required>
+            <div class="input-group mb-3 my-2">
+                <span class="input-group-text">R.S</span>
+                <input type="text" class="form-control" name="amount" placeholder="Amount"  aria-label="Amount" required>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Expenditure</button>
+        </form>
+      </div>
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Purpose</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in datas %}
+          <tr>
+           
+            <td>{{data.purpose}}</td>
+            <td> <strong>R.S</strong> {{data.amount}}</td>
+            <td> {{data.timestamp}}</td>
+            <form action="{% url 'delete' %}" method="post"> {% csrf_token %}
+              <input type="hidden" name="hidden" value={{data.id}}>
+              
+              <td>
+                <button class="btn btn-info"><i class="far fa-trash-alt"> Delete</i></button></td>
+            </form>
+  
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+
+{% endblock body %}
